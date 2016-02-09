@@ -28,5 +28,7 @@ $capsule->setAsGlobal();
 // Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
 $capsule->bootEloquent();
 
+// Add the database if needed. However, if you are using \app\Modules, you must put
+// schema builder in registerSchema method of Register class
 require __DIR__ . '/../artifacts/tables.php';
 

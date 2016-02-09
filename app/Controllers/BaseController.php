@@ -8,6 +8,7 @@ namespace App\Controllers;
 class BaseController
 {
 	protected $container = null;
+	protected $templateName = null;
 	
 	function __construct($container)
 	{
@@ -15,6 +16,13 @@ class BaseController
 	}
 
 	function render($response, $template, $args) {
-		return $this->container->view->render($response, $template, $args);
+		if($this->templateName != null ){
+			return $this->container->view->render($response, "@$this->templateName/$template", $args);
+		}else {
+
+			return $response->withStatus(500)
+					->withHeader('Content-Type', 'text/html')
+					->write('Template name not define in class ' . static::class);
+		}
 	}
 }
