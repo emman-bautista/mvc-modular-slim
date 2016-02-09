@@ -1,9 +1,9 @@
 <?php 
 
-namespace App\Utilities;
+namespace App\Modules;
 use \App\Container\AppContainer as App;
 
-class Module implements \App\Interfaces\ModuleInterface{
+class BaseModule implements \App\Interfaces\ModuleInterface{
 	protected $name;
 	protected $version = 1.0;
 	protected $app;
