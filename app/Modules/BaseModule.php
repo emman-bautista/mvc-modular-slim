@@ -5,7 +5,7 @@ use \App\Container\AppContainer as App;
 
 class BaseModule implements \App\Interfaces\ModuleInterface{
 	// To be used in template namespace
-	protected $templateName = null;
+	protected $templateNamespace = null;
 	// Module version
 	protected $version = 1.0;
 	// Used as variable for the AppContainer
@@ -41,10 +41,10 @@ class BaseModule implements \App\Interfaces\ModuleInterface{
 	}
 
 	public function registerTemplate() {
-		if($this->templateName == null) return false;
+		if($this->templateNamespace == null) return false;
 
 		$templatePath = dirname($this->path) . "/Templates";
- 		$this->app->getContainer()->view->getEnvironment()->getLoader()->addPath($templatePath, $this->templateName);
+ 		$this->app->getContainer()->view->getEnvironment()->getLoader()->addPath($templatePath, $this->templateNamespace);
 	}
 
 }

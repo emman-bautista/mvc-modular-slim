@@ -6,7 +6,7 @@ namespace App\Modules\DefaultModule\Controllers;
 */
 class IndexController extends \App\Controllers\BaseController
 {	
-	protected $templateName = 'Default';
+	protected $templateNamespace = 'Default';
 
 	// Parameters $request, $response and $args show always be declared.
 	function home($request, $response, $args) {

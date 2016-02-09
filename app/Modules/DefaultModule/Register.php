@@ -8,7 +8,7 @@ class Register extends \App\Modules\BaseModule{
 	public function __construct() {
 
 		// Extends your the class
-		$this->templateName = 'Default';
+		$this->templateNamespace = 'Default';
 
 		//extend the class now;
 		return parent::__construct();

@@ -8,7 +8,7 @@ namespace App\Controllers;
 class BaseController
 {
 	protected $container = null;
-	protected $templateName = null;
+	protected $templateNamespace = null;
 	
 	function __construct($container)
 	{
@@ -16,8 +16,8 @@ class BaseController
 	}
 
 	function render($response, $template, $args) {
-		if($this->templateName != null ){
-			return $this->container->view->render($response, "@$this->templateName/$template", $args);
+		if($this->templateNamespace != null ){
+			return $this->container->view->render($response, "@$this->templateNamespace/$template", $args);
 		}else {
 
 			return $response->withStatus(500)
