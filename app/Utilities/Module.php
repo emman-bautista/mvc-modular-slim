@@ -1,26 +1,37 @@
 <?php 
 
 namespace App\Utilities;
+use \App\Container\AppContainer as App;
 
 class Module implements \App\Interfaces\ModuleInterface{
 	protected $name;
 	protected $version = 1.0;
 	protected $app;
+	protected $path = null;
+
 
 	function __construct() {
-		$this->app = \App\AppContainer::getInstance();
+		
+		$ref = new \ReflectionClass(static::class);
+		$this->path = $ref->getFileName();
+
+		$this->app = App::getInstance();
+		$this->registerTemplate();
+		$this->registerSchema();
+		$this->registerRoutes();
+
+		return $this;
 	}
 
-	function initialize() {
-		$this->initializeSchema();
-		$this->initializeRoutes();
-	}
-
-	function initializeSchema() {
+	function registerSchema() {
 
 	}
 
-	function initializeRoutes() {
+	function registerRoutes() {
+
+	}
+
+	function registerTemplate() {
 
 	}
 

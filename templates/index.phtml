@@ -25,9 +25,8 @@
         </style>
     </head>
     <body>
-        {% include  'menu.phtml' %}
-        <h1>Slim</h1>
-        <div>a microframework for PHP</div>
-        <h2>Hello {{ profile.first_name }} !</h2>
+        {% block content %}
+            
+        {% endblock %}
     </body>
 </html>

@@ -2,7 +2,7 @@
 namespace App\Interfaces;
 
 interface ModuleInterface {
-	public function initialize();
-	public function initializeSchema();
-	public function initializeRoutes();
+	public function registerSchema();
+	public function registerRoutes();
+	public function registerTemplate();
 }

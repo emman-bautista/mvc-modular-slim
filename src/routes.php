@@ -10,4 +10,4 @@
 // });
 
 
-$app->get('/', 'App\Controllers\HomeController:home')->setName('home');
+//$app->get('/', 'App\Controllers\HomeController:home')->setName('home');

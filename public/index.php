@@ -15,12 +15,9 @@ session_start();
 
 // Instantiate the app
 $settings = require __DIR__ . '/../src/settings.php';
+use App\Container\AppContainer as App;
 
-use Slim\App;
-
-$app = \App\AppContainer::getInstance($settings);
-
-
+$app = App::getInstance($settings);
 
 // Set up dependencies
 require __DIR__ . '/../src/dependencies.php';
