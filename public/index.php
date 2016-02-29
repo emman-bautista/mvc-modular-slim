@@ -25,11 +25,15 @@ require __DIR__ . '/../src/dependencies.php';
 // Register middleware
 require __DIR__ . '/../src/middleware.php';
 
-// Register middleware
-require __DIR__ . '/../src/twig.php';
 
 // Set up database 
 require __DIR__ . '/../src/database.php';
+
+// Set up ACL
+require __DIR__ . '/../src/acl.php';
+
+// Register middleware
+require __DIR__ . '/../src/twig.php';
 
 // Register routes
 require __DIR__ . '/../src/routes.php';

@@ -22,3 +22,5 @@ $container['view'] = function ($c) {
 //Add Global variables in twig
 $twig_environment = $container['view']->getEnvironment();
 $twig_environment->addGlobal('menu',  require __DIR__ . '/menu.php');
+$twig_environment->addGlobal('messages',  $container->flash->getMessages());
+$twig_environment->addGlobal('identity',  $container->get('authenticator')->getIdentity());

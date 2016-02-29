@@ -1,0 +1,15 @@
+{% if messages['Error']|length > 0 %}
+	<div class="alert alert-danger">
+		{% for error in messages['Error'] %}
+			<p>{{ error }}</p>
+		{% endfor %}
+	</div>
+{% endif %}
+
+{% if messages['Success']|length > 0 %}
+	<div class="alert alert-success">
+		{% for success in messages['Success'] %}
+			<p>{{ success }}</p>
+		{% endfor %}
+	</div>
+{% endif %}

@@ -16,4 +16,5 @@ class IndexController extends \App\Controllers\BaseController
 	function about($request, $response, $args) {
 		$this->render($response, 'about.phtml', ['title'=>'About']);	
 	}
+	
 }

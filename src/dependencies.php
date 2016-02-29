@@ -18,3 +18,8 @@ $container['logger'] = function ($c) {
     $logger->pushHandler(new \Monolog\Handler\PHPConsoleHandler() );
     return $logger;
 };
+
+// flash message
+$container['flash'] = function () {
+    return new \Slim\Flash\Messages();
+};

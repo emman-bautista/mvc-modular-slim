@@ -1,0 +1,60 @@
+{% extends 'layout.phtml' %}
+{% block head %}
+	
+	{{ parent() }} {# This is extending the parent block which is "head" #}
+{% endblock %}
+{% block content %}
+<div class="registration-page">
+	<div class="row">
+		<div class="form-wrapper col-md-6 col-md-offset-3">
+			<p>
+				{% include 'messages.phtml' %}
+			</p>
+			<p class="required-text">
+				* Mandatory fields.
+				</p>
+			<?php require_once __DIR__ . "/error_message.php" ?>
+			<form action="{{ path_for('register') }}" class="form" method="POST" novalidate>
+				
+					<div class="form-group">
+						<label class="control-label">First name <span class="required">*</span></label>
+						<input type="text" name="first_name" class="form-control" id="first_name" placeholder="" value="{{ first_name }}" required>
+					</div>
+				
+				
+					<div class="form-group">
+						<label class="control-label">Last name <span class="required">*</span></label>
+						<input type="text" name="last_name" class="form-control" id="last_name" placeholder="" value="{{ last_name }}" required>
+					</div>
+				
+				
+					<div class="form-group">
+						<label class="control-label">Business Email <span class="required">*</span></label>
+						<input type="email" name="email" class="form-control" id="email" placeholder="" value="{{ email }}" required>
+					</div>
+				
+				
+					<div class="form-group">
+						<label class="control-label" for="exampleInputPassword1">*Password <span class="required">*</span></label>
+						<input type="password" name="password" class="form-control" id="password" placeholder="" required>
+					</div>
+				
+				
+					<div class="form-group">
+						<label class="control-label" for="exampleInputPassword1">*Confirm Password <span class="required">*</span></label>
+						<input type="password" name="confirm_password" class="form-control " id="confirm_password" placeholder="" required>
+					</div>
+				
+					
+					<div class="form-group">
+						<span class="pull-left">Already registered? Login <a href="{{ path_for('login') }}">here</a></span>
+						<button class="btn btn-primary pull-right col-sm-5" type="submit">Submit</button>
+					</div>
+					
+			</form>
+			<div class="clear clearfix"></div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

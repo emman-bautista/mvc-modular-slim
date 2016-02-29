@@ -1,0 +1,9 @@
+{% extends 'layout.phtml' %}
+{% block head %}
+	{{ parent() }} {# This is extending the parent block which is "head" #}
+{% endblock %}
+{% block content %}
+	<h1>{{ title }}</h1>
+	{{ identity|length }}
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, dicta reiciendis unde consectetur quidem sit repellat ducimus quae qui amet minima velit rem explicabo eos vel, adipisci laudantium tenetur est.</p>
+{% endblock %}

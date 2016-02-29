@@ -7,4 +7,5 @@
 		function profile() {
 			return $this->hasOne(UserProfile::class);
 		}
+
 	}
