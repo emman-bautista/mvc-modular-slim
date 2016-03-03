@@ -24,7 +24,6 @@
 	    return new \App\Utilities\Acl($acl);
 	};
 
-
 	$container->register(new \JeremyKendall\Slim\Auth\ServiceProvider\SlimAuthProvider());
 
 	$app->add($container->get('slimAuthRedirectMiddleware'));

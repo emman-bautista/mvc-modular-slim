@@ -1,6 +1,4 @@
 <?php 
-
-
 // Fetch DI Container
 $container = $app->getContainer();
 

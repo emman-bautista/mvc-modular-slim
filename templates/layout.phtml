@@ -4,14 +4,14 @@
         <!-- HEADER -->
         {% block head %}
             <meta charset="utf-8"/>
-            <title>Slim 3</title>
+            <title>{% if title is defined %}{{ title }}{% else %}Untitled{% endif %}</title>
             <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         {% endblock %}
     </head>
     <body>
         <!-- CONTENT -->
-        <div class="container">
+        <div class="container" id="{% if page_id is defined %}{{ page_id }}{% endif %}">
             {% block content %}Content{% endblock %}
         </div>
         <!-- FOOTER -->

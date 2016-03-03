@@ -22,7 +22,7 @@ if(!$schema->hasTable('users')){
 	    $table->softDeletes();
 	});
 
-	$user = new \App\Models\User;
+	$user = new \App\Modules\DefaultModule\Models\User;
 
 	//Insert Record
 	$user->email = 'john.doe@gmail.com';
@@ -52,7 +52,7 @@ if(!$schema->hasTable('user_profile')){
 	});
 
 
-	$user_profile = new \App\Models\UserProfile;
+	$user_profile = new App\Modules\DefaultModule\Models\UserProfile;
 	$user_profile->first_name = "John";
 	$user_profile->last_name = "Doe";
 	$user_profile->age = 36;
