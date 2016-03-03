@@ -1,14 +1,14 @@
 {
-    "name": "slim/slim-skeleton",
-    "description": "A Slim Framework skeleton application for rapid development",
-    "keywords": ["microframework","rest","router", "psr7"],
-    "homepage": "http://github.com/slimphp/Slim-Skeleton",
+    "name": "emman-bautista/mvc-modular-slim",
+    "description": "A Slim Framework application with modular feature for rapid development",
+    "keywords": ["microframework","rest","router", "psr7", "modular"],
+    "homepage": "http://github.com/emman-bautista/mvc-modular-slim/",
     "license": "MIT",
     "authors": [
         {
-            "name": "Josh Lockhart",
-            "email": "info@joshlockhart.com",
-            "homepage": "http://www.joshlockhart.com/"
+            "name": "Emmanuel Bautista",
+            "email": "emmanuel.bautista@gmail.com",
+            "homepage": "http://emmanbautista.me"
         }
     ],
     "require": {
