@@ -28,7 +28,8 @@ return [
                 [ 'route' => '/', 'role' => 'guest', 'methods' => ['GET'] ],
                 [ 'route' => '/login', 'role' => 'guest', 'methods' => ['GET', 'POST'] ],
                 [ 'route' => '/register', 'role' => 'guest', 'methods' => ['GET', 'POST'] ],
-                [ 'route' => '/logout', 'role' => 'member', 'methods' => ['GET'] ]
+                [ 'route' => '/logout', 'role' => 'member', 'methods' => ['GET'] ],
+                [ 'route' => '/create_data', 'role' => 'guest', 'methods' => ['GET'] ]
             ]
         ],
         'menu' => require __DIR__ . '/menu.php'

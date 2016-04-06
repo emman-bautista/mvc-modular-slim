@@ -11,9 +11,15 @@
 // 
 
 $app->get('/', function($request, $response, $args) {
-	//print_r($this->get('authenticator')->getIdentity());
 	$this->view->render($response, 'home.phtml', ['title' => 'Home']);
+	
 })->setName('home');
+
+$app->get('/create_data', function($request, $response, $args) {
+	$data = new App\Models\Data('Content', ['title'=>'TEST', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore laudantium architecto quo maxime perferendis quidem fuga sed corporis eaque distinctio.']);
+	$data->save();
+	
+})->setName('create_data');
 
 $app->map(['GET', 'POST'], '/login', function($request, $response, $args) {
 	if($this->get('authenticator')->hasIdentity()) {
