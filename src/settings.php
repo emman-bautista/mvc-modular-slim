@@ -32,6 +32,7 @@ return [
                 [ 'route' => '/create_data', 'role' => 'guest', 'methods' => ['GET'] ]
             ]
         ],
+        
         'menu' => require __DIR__ . '/menu.php'
     ],
 ];

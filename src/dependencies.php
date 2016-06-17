@@ -19,7 +19,4 @@ $container['logger'] = function ($c) {
     return $logger;
 };
 
-// flash message
-$container['flash'] = function () {
-    return new \Slim\Flash\Messages();
-};
+

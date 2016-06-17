@@ -25,4 +25,5 @@ class BaseController
 					->write('Template name not define in class ' . static::class);
 		}
 	}
+
 }

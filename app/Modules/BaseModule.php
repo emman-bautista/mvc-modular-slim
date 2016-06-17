@@ -21,6 +21,7 @@ class BaseModule implements \App\Interfaces\ModuleInterface{
 		$this->registerTemplate();
 		$this->registerSchema();
 		$this->registerRoutes();
+		$this->registerMiddlewares();
 		$this->setAcl();
 		return $this;
 
@@ -69,6 +70,14 @@ class BaseModule implements \App\Interfaces\ModuleInterface{
 
 		$templatePath = dirname($this->path) . "/Templates";
  		$this->app->getContainer()->view->getEnvironment()->getLoader()->addPath($templatePath, $this->templateNamespace);
+	}
+
+	public function registerMiddlewares()
+	{
+		$middlewarePath = dirname($this->path) . '/middlewares.php';
+		if(file_exists($middlewarePath)) {
+			require $middlewarePath;
+		}
 	}
 
 }
