@@ -18,11 +18,15 @@ class BaseModule implements \App\Interfaces\ModuleInterface{
 		
 		$ref = new \ReflectionClass(static::class);
 		$this->path = $ref->getFileName();
+
+		// Get app's instance
 		$this->app = App::getInstance();
+
+		// Register module files
 		$this->registerTemplate();
 		$this->registerSchema();
 		$this->registerRoutes();
-		$this->registerMiddlewares();
+		$this->registerMiddleware();
 		$this->registerEvents();
 		$this->setAcl();
 		$this->registerMenu();
@@ -75,9 +79,9 @@ class BaseModule implements \App\Interfaces\ModuleInterface{
  		$this->app->getContainer()->view->getEnvironment()->getLoader()->addPath($templatePath, $this->templateNamespace);
 	}
 
-	public function registerMiddlewares()
+	public function registerMiddleware()
 	{
-		$middlewarePath = dirname($this->path) . '/middlewares.php';
+		$middlewarePath = dirname($this->path) . '/middleware.php';
 		if(file_exists($middlewarePath)) {
 			require $middlewarePath;
 		}
