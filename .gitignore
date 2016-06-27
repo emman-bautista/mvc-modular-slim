@@ -2,4 +2,4 @@
 /logs/*
 !/logs/README.md
 app/Modules/*
-!app/Modules/DefaultModule/*
+!app/Modules/DefaultModule/
