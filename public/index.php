@@ -15,7 +15,7 @@ session_start();
 
 // Instantiate the app
 $settings = require __DIR__ . '/../src/settings.php';
-use App\Container\AppContainer as App;
+use App\Core\AppContainer as App;
 
 $app = App::getInstance($settings);
 
@@ -24,7 +24,6 @@ require __DIR__ . '/../src/dependencies.php';
 
 // Register middleware
 require __DIR__ . '/../src/middleware.php';
-
 
 // Set up database 
 require __DIR__ . '/../src/database.php';
@@ -41,11 +40,11 @@ require __DIR__ . '/../src/routes.php';
 // Register Modules
 require __DIR__ . '/../src/modules.php';
 
+// Events
+require __DIR__ . '/../src/events.php';
 
 
 // Run app
 $app->run();
-
-
 
 ?>

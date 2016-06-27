@@ -7,9 +7,8 @@ use Respect\Validation\Validator as v;
 /**
 * 
 */
-class UserController extends BaseController implements \App\Interfaces\EmailInterface
+class UserController extends App\Core\BaseController
 {
-
 
 	function login($request, $response, $args) {
 
@@ -56,6 +55,8 @@ class UserController extends BaseController implements \App\Interfaces\EmailInte
 
 	        	$twig_environment = $this->container->view->getEnvironment();
 	        	$twig_environment->addGlobal('identity',  $result->getIdentity());
+
+	        	$this->container->events->fire('auth.login', $result->getIdentity());
 
 	            return $response->withHeader('Location', $this->container->router->pathFor('home'));
 	        }
@@ -195,21 +196,10 @@ class UserController extends BaseController implements \App\Interfaces\EmailInte
 
 
 	function logout($request, $response, $args) {
+		$user_id = $this->container->get('authenticator')->getIdentity();
 	    $this->container->get('authenticator')->logout();
+	    $this->container->events->fire("auth.logout", $user_id);
 	    return $response->withStatus(301)->withHeader('Location', $this->container->router->pathFor('login'));
 	}
 
-
-	function onRegister() {
-
-	}
-	function onForgotPassword() {
-
-	}
-	function onLogin() {
-
-	}
-	function onActivation() {
-
-	}
 }

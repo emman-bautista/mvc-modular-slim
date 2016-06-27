@@ -1,0 +1,12 @@
+{% if link1 is iterable %}
+	<li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ label1 }} <b class="caret"></b></a>
+		<ul class="dropdown-menu">
+			{% for subLabel1, subLink1 in link1 %}
+				{% include 'partials/menuItem.phtml' with {'link1': subLink1, 'label1':subLabel1} %}
+			{% endfor %}
+		</ul>
+	</li>
+{% else %}
+	<li><a href="{{ link1 }}">{{ label1 }}</a></li>
+{% endif %}

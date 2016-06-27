@@ -58,3 +58,19 @@ $container['homeRedirect'] = function($container){
 
 	return true;
 };
+
+use Illuminate\Events\Dispatcher;
+
+// route middleware
+$container['events'] = function($container){
+    $event = new Dispatcher();
+    return $event;
+};
+
+
+$container['menu'] = function($container) {
+  $menuItems = require __DIR__ . '/menu.php';
+  $menu = new App\Utilities\Menu();
+  $menu->addMenu($menuItems);
+  return $menu;
+};

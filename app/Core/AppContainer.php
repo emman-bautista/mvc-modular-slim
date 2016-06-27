@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Container;
+namespace App\Core;
 
 use Slim\App;
  
@@ -25,4 +25,5 @@ class AppContainer
 
         return $app;
     }
+
 }

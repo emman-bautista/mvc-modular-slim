@@ -1,7 +1,26 @@
-<ul>
-    {% for key, item in menu %}
-        <li>
-        	<a href="{{item}}">{{ key|capitalize }}</a>
-        	</li>
-    {% endfor %}
-</ul>
+<nav class="navbar navbar-default navbar-fixed-top navbar-condensed" role="navigation">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="{{ path_for('events_admin') }}">Title</a>
+		</div>
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<ul class="nav navbar-nav">
+				{% for label, link in menu %}
+						{% include 'partials/menuItem.phtml' with {'link1': link, 'label1': label} %}
+				{% endfor %}
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">Logout</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+

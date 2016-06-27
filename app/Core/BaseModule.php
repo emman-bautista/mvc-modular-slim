@@ -1,7 +1,7 @@
 <?php 
 
-namespace App\Modules;
-use \App\Container\AppContainer as App;
+namespace App\Core;
+use \App\Core\AppContainer as App;
 
 class BaseModule implements \App\Interfaces\ModuleInterface{
 	// To be used in template namespace
@@ -12,6 +12,7 @@ class BaseModule implements \App\Interfaces\ModuleInterface{
 	protected $app = null;
 	// Used to register the path and referencing
 	protected $path = null;
+	protected $menu = null;
 
 	public function __construct() {
 		
@@ -22,7 +23,9 @@ class BaseModule implements \App\Interfaces\ModuleInterface{
 		$this->registerSchema();
 		$this->registerRoutes();
 		$this->registerMiddlewares();
+		$this->registerEvents();
 		$this->setAcl();
+		$this->registerMenu();
 		return $this;
 
 	}
@@ -80,4 +83,25 @@ class BaseModule implements \App\Interfaces\ModuleInterface{
 		}
 	}
 
+
+	public function registerEvents()
+	{
+		$eventsPath = dirname($this->path) . '/events.php';
+		if(file_exists($eventsPath)) {
+			require $eventsPath;
+		}
+	}
+
+	public function registerMenu()
+	{
+		$menuPath = dirname($this->path) . '/menu.php';
+		
+
+		if(file_exists($menuPath)) {
+			
+			$menuItems = require $menuPath;
+			
+			$this->app->getContainer()->menu->addMenu($menuItems);
+		}
+	}
 }
