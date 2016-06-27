@@ -1,5 +1,4 @@
 /vendor/
 /logs/*
 !/logs/README.md
-app/Modules/CMS/
-app/Modules/Playbook/
+app/Modules/*
