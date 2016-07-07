@@ -1,9 +1,7 @@
 <?php 
 
-define('APP_PATH', __DIR__ . '/../app/');
-
 /** registering modules */
-foreach (glob(APP_PATH.'Modules/*') as $module) {
+foreach (glob(APP_PATH.'/Modules/*') as $module) {
 	if(is_dir($module)){
 		$moduleName = basename($module);
 
@@ -11,5 +9,4 @@ foreach (glob(APP_PATH.'Modules/*') as $module) {
 		$className = "App\\Modules\\$moduleName\\Register"; 
 		$module = new $className;
 	}
-
 }

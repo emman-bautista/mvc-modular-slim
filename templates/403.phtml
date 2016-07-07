@@ -4,6 +4,22 @@
 	{{ parent() }} {# This is extending the parent block which is "head" #}
 {% endblock %}
 {% block content %}
-    <h1>403 Error</h1>
-    <p>{{ e.getMessage() }}</p>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title text-center">Error {{ status }}</h3>
+				</div>
+				<div class="panel-body">
+					 <p><small>{{ e.getMessage() }}</small></p>
+				</div>
+				<div class="panel-footer">
+					<p class="text-center">Press <a href="{{ request_path }}">here</a> to try again</p>		
+				</div>
+			</div>
+		    
+		   
+		    
+    	</div>
+    </div>
 {% endblock %}

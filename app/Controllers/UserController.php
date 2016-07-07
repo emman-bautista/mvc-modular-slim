@@ -7,7 +7,7 @@ use Respect\Validation\Validator as v;
 /**
 * 
 */
-class UserController extends App\Core\BaseController
+class UserController extends \App\Core\BaseController
 {
 
 	function login($request, $response, $args) {

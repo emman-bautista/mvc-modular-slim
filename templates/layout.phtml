@@ -8,9 +8,10 @@
             <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
             <script   src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="/styles/main.css">
         {% endblock %}
     </head>
-    <body>
+    <body class="front">
         <!-- CONTENT -->
         <div class="container" id="{% if page_id is defined %}{{ page_id }}{% endif %}">
             {% block content %}Content{% endblock %}

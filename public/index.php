@@ -19,31 +19,31 @@ use App\Core\AppContainer as App;
 
 $app = App::getInstance($settings);
 
+// Setup Constants
+require __DIR__ . '/../src/constants.php';
 // Set up dependencies
-require __DIR__ . '/../src/dependencies.php';
+require SOURCES_PATH . '/dependencies.php';
 
 // Register middleware
-require __DIR__ . '/../src/middleware.php';
+require SOURCES_PATH . '/middleware.php';
 
 // Set up database 
-require __DIR__ . '/../src/database.php';
+require SOURCES_PATH . '/database.php';
 
 // Set up ACL
-require __DIR__ . '/../src/acl.php';
+require SOURCES_PATH . '/acl.php';
 
 // Register middleware
-require __DIR__ . '/../src/twig.php';
+require SOURCES_PATH . '/twig.php';
 
 // Register routes
-require __DIR__ . '/../src/routes.php';
+require SOURCES_PATH . '/routes.php';
 
 // Register Modules
-require __DIR__ . '/../src/modules.php';
+require SOURCES_PATH . '/modules.php';
 
 // Events
-require __DIR__ . '/../src/events.php';
-
-
+require SOURCES_PATH . '/events.php';
 // Run app
 $app->run();
 

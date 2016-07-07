@@ -74,3 +74,13 @@ $container['menu'] = function($container) {
   $menu->addMenu($menuItems);
   return $menu;
 };
+
+$container['base_url'] = function(){
+    return sprintf(
+      "%s://%s%s",
+       (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443 ? 'https' : 'http',
+      $_SERVER['SERVER_NAME'],
+      $_SERVER['SERVER_PORT'] != 80 ? (':' . $_SERVER['SERVER_PORT']) : ''
+    );
+};
+//print_r($_SERVER);

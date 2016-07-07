@@ -24,7 +24,9 @@
         "jeremykendall/slim-auth": "dev-slim-3.x",
         "respect/validation": ">=1.1.2",
         "davidepastore/slim-validation": "^0.1.0",
-        "mailgun/mailgun-php": "~2.0"
+        "phpmailer/phpmailer": "~5.2",
+        "mailgun/mailgun-php": "~2.0",
+        "cocur/slugify": "^2.1"
     },
     "autoload": {
         "psr-4" : {

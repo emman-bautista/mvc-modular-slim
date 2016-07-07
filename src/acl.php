@@ -28,12 +28,5 @@
 
 	$app->add($container->get('slimAuthRedirectMiddleware'));
 
-	$container['errorHandler'] = function ($c) use($app){
-	    return function ($request, $response, $exception) use ($c) {
-
-	        return $c['response']->withStatus(403)
-	                             ->withHeader('Content-Type', 'text/html')
-	                             ->write($c->view->fetch('403.phtml', ['e' => $exception]));
-	    };
-	};
+	
  ?>
